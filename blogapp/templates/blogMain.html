@@ -15,9 +15,9 @@
         <br>
         <p class="lead">{{ blog.body | safe }}</p>
         <br>
-        <a class="btn btn-lg btn-primary"
-           href="{{ site.baseurl }}/docs/{{ site.docs_version }}/components/navbar/"
-           role="button">View navbar docs &raquo;</a>
+
+        <a class="btn btn-lg btn-primary" href="{% url 'detail' blog.id %}" role="button">View navbar docs &raquo;</a>
+
       </div>
     </main>
   {% endfor %}
