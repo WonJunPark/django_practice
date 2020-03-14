@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 from .forms import CreateBlog
+from .models import Blog
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
 
 def blogMain(request):
-    return render(request, 'blogMain.html')
+    blogs = Blog.objects.all()
+
+    return render(request, 'blogMain.html', {'blogs':blogs})
 
 
 def createBlog(request):
